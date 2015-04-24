@@ -1,0 +1,15 @@
+{
+  "name": "<%= appName %>",
+  "description": "<%= description %>",
+  "launch_path": "/index.html",
+  "icons": {
+    "128": "/images/icon128.png",
+    "512": "/images/icon512.png"
+  },
+  "developer": {
+    "name": "<%= devName %>"<% if (devUrl) {%>,
+    "url": "<%= devUrl %>"<% } %>
+  },
+  "type": "privileged",
+  "default_locale": "en"
+}

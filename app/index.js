@@ -2,6 +2,12 @@
 var yeoman = require('yeoman-generator');
 var chalk = require('chalk');
 var yosay = require('yosay');
+var startCase = require('lodash/string/startCase');
+var kebabCase = require('lodash/string/kebabCase');
+
+function validateStringLength (input) {
+  return input.length > 0;
+}
 
 module.exports = yeoman.generators.Base.extend({
   initializing: function () {
@@ -13,19 +19,32 @@ module.exports = yeoman.generators.Base.extend({
 
     // Have Yeoman greet the user.
     this.log(yosay(
-      'Welcome to the striking ' + chalk.red('Ffpa') + ' generator!'
+      'Welcome to the striking ' + chalk.red('Firefox packaged app') + ' generator!'
     ));
 
     var prompts = [{
-      type: 'confirm',
-      name: 'someOption',
-      message: 'Would you like to enable this option?',
-      default: true
+      name: 'appName',
+      message: 'Name of your app:',
+      default: startCase(this.appname)
+    },
+    {
+      name: 'description',
+      message: 'Description of your app:',
+      default: 'My packaged app for Firefox OS'
+    },
+    {
+      name: 'devName',
+      message: 'Your name:',
+      validate: validateStringLength
+    },
+    {
+      name: 'devUrl',
+      message: 'URL to your website (optional):'
     }];
 
     this.prompt(prompts, function (props) {
       this.props = props;
-      // To access props later use this.props.someOption;
+      this.props.packageName = kebabCase(props.appName);
 
       done();
     }.bind(this));
@@ -33,17 +52,24 @@ module.exports = yeoman.generators.Base.extend({
 
   writing: {
     app: function () {
-      this.fs.copy(
-        this.templatePath('_package.json'),
-        this.destinationPath('package.json')
-      );
-      this.fs.copy(
-        this.templatePath('_bower.json'),
-        this.destinationPath('bower.json')
-      );
+      this.fs.copyTpl(
+        this.templatePath('manifest.webapp'),
+        this.destinationPath('app/manifest.webapp'),
+        this.props
+      )
     },
 
     projectfiles: function () {
+      this.fs.copyTpl(
+        this.templatePath('_package.json'),
+        this.destinationPath('package.json'),
+        this.props
+      );
+      this.fs.copyTpl(
+        this.templatePath('_bower.json'),
+        this.destinationPath('bower.json'),
+        this.props
+      );
       this.fs.copy(
         this.templatePath('editorconfig'),
         this.destinationPath('.editorconfig')
