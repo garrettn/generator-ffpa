@@ -24,7 +24,14 @@ describe('ffpa:app', function () {
       'package.json',
       '.editorconfig',
       '.jshintrc',
-      'app/manifest.webapp'
+      '.gitignore',
+      'webpack.config.js',
+      'app/manifest.webapp',
+      'app/index.html',
+      'app/scripts/main.js',
+      'app/styles/main.css',
+      'app/images/icon128.png',
+      'app/images/icon512.png'
     ]);
   });
 

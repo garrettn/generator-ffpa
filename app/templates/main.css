@@ -1,0 +1,13 @@
+/*
+  Webpack inlines CSS imports for you, so they're fine to use.
+
+  URLs are converted like so:
+  - url(image.png) => require("./image.png")
+  - url(~module/image.png) => require("module/image.png")
+
+*/
+@import url(~sanitize-css);
+
+body {
+  font-family: sans-serif;
+}

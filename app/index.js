@@ -56,7 +56,31 @@ module.exports = yeoman.generators.Base.extend({
         this.templatePath('manifest.webapp'),
         this.destinationPath('app/manifest.webapp'),
         this.props
-      )
+      );
+      this.fs.copyTpl(
+        this.templatePath('index.html'),
+        this.destinationPath('app/index.html'),
+        this.props
+      );
+      this.fs.copyTpl(
+        this.templatePath('main.js'),
+        this.destinationPath('app/scripts/main.js'),
+        this.props
+      );
+      this.fs.copyTpl(
+        this.templatePath('main.css'),
+        this.destinationPath('app/styles/main.css'),
+        this.props
+      );
+      this.fs.copy(
+        this.templatePath('icon128.png'),
+        this.destinationPath('app/images/icon128.png')
+      );
+
+      this.fs.copy(
+        this.templatePath('icon512.png'),
+        this.destinationPath('app/images/icon512.png')
+      );
     },
 
     projectfiles: function () {
@@ -77,6 +101,15 @@ module.exports = yeoman.generators.Base.extend({
       this.fs.copy(
         this.templatePath('jshintrc'),
         this.destinationPath('.jshintrc')
+      );
+      this.fs.copy(
+        this.templatePath('gitignore'),
+        this.destinationPath('.gitignore')
+      );
+      this.fs.copyTpl(
+        this.templatePath('webpack.config.js'),
+        this.destinationPath('webpack.config.js'),
+        this.props
       );
     }
   },
