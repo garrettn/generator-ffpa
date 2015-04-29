@@ -1,5 +1,6 @@
 # generator-ffpa
 
+[![npm version](https://badge.fury.io/js/generator-ffpa.svg)](http://badge.fury.io/js/generator-ffpa)
 [![Build Status](https://secure.travis-ci.org/garrettn/generator-ffpa.svg?branch=master)](http://travis-ci.org/garrettn/generator-ffpa)
 [![Dependencies](https://david-dm.org/garrettn/generator-ffpa.svg?style=flat)](https://david-dm.org/garrettn/generator-ffpa)
 [![devDependencies](https://david-dm.org/garrettn/generator-ffpa/dev-status.svg?style=flat)](https://david-dm.org/garrettn/generator-ffpa#info=devDependencies)
