@@ -1,6 +1,6 @@
 {
   "name": "generator-ffpa",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Yeoman generator for creating a Firefox OS packaged app",
   "license": "MIT",
   "main": "app/index.js",
