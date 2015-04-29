@@ -26,6 +26,7 @@ describe('ffpa:app', function () {
       '.jshintrc',
       '.gitignore',
       'webpack.config.js',
+      'zip.js',
       'app/manifest.webapp',
       'app/index.html',
       'app/scripts/main.js',

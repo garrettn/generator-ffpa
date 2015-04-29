@@ -111,6 +111,10 @@ module.exports = yeoman.generators.Base.extend({
         this.destinationPath('webpack.config.js'),
         this.props
       );
+      this.fs.copy(
+        this.templatePath('zip.js'),
+        this.destinationPath('zip.js')
+      );
     }
   },
 
