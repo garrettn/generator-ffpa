@@ -1,6 +1,14 @@
 sudo: false
 language: node_js
 node_js:
-  - 'iojs'
-  - '0.12'
-  - '0.10'
+- iojs
+- '0.12'
+- '0.10'
+deploy:
+  provider: npm
+  email: garrettnay@ymail.com
+  api_key:
+    secure: ZAbWj+VZlogroPSvm6RW7iGNIM5juT9nTUp0LJDbfumlhKDO07RswCA0TrvMdh25wibB3ur9XayNFR8WOOpE24V0HBjOJlJHgTQgNzJ9OchhLwwUy+ZtPoUn+r00HDpahVUe0IjWekTK9jPYKNJ+6nT1q6fvdlJ5Tb39oVeTVOc=
+  on:
+    tags: true
+    repo: garrettn/generator-ffpa
