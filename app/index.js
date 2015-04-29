@@ -120,5 +120,9 @@ module.exports = yeoman.generators.Base.extend({
 
   install: function () {
     this.installDependencies();
+  },
+
+  end: function () {
+    this.log('Good to go! Run ' + chalk.bold.yellow('npm start') + ' to start building and then open your app in the WebIDE.');
   }
 });
