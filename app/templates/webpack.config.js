@@ -69,6 +69,7 @@ var config = {
     // Generate an index.html file that automatically references the generated
     // script and stylesheet
     new HtmlPlugin({
+      inject: true,
       template: 'app/index.html'
     }),
 
