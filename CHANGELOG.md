@@ -1,3 +1,18 @@
+## 1.3.0 (2015-05-02)
+
+#### Features
+
+- Automatically add CSS vendor prefixes for Firefox OS 2.0 and up with Autoprefixer (via PostCSS).
+
+#### Fixes
+
+- sanitize.css was causing problems with source maps, so it was removed. A few of its rules were moved into `main.css`.
+
+#### Other
+
+- Added documentation for how to use third-party dependencies.
+- Moved the file-loader configuration for the files required by Firefox OS (`manifest.webapp` and the app icons) from `main.js` to `webpack.config.js`.
+
 ## 1.2.0 (2015-05-02)
 
 #### Features
