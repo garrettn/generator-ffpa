@@ -1,9 +1,10 @@
 'use strict';
 
-// Copy the files necessary for Firefox OS, preserving their names
-require('!file?name=[name].[ext]!../manifest.webapp');
-require('!file?name=[name].[ext]!../images/icon128.png');
-require('!file?name=[name].[ext]!../images/icon512.png');
+// Copy the files necessary for Firefox OS (configured with file-loader in
+// webpack.config.js)
+require('../manifest.webapp');
+require('../images/icon128.png');
+require('../images/icon512.png');
 
 // Import the main stylesheet
 require('styles/main.css');

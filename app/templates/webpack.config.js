@@ -60,7 +60,13 @@ var config = {
 
       // Always load fonts as a separate file, in case the stylesheet defines
       // several files for the same font face.
-      { test: /\.(eot|woff2?|ttf)$/, loader: 'file' }
+      { test: /\.(eot|woff2?|ttf)$/, loader: 'file' },
+
+      // Copy the files required for a Firefox OS app, preserving their names
+      {
+        test: /manifest\.webapp|icon(128|512)\.png/,
+        loader: 'file?name=[name].[ext]'
+      }
     ],
     postLoaders: [
         // Run JSHint after transforms because it doesn't understand JSX syntax
