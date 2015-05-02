@@ -24,6 +24,7 @@ var config = {
   },
 
   resolve: {
+    extensions: ['', '.webpack.js', '.web.js', '.js', '.jsx'],
     modulesDirectories: ['web_modules', 'node_modules', 'bower_components'],
     root: __dirname + '/app/scripts',
     alias: {
@@ -32,14 +33,12 @@ var config = {
   },
 
   module: {
-    preLoaders: [
-        {
-            test: /\.js$/,
-            exclude: /node_modules/,
-            loader: 'jshint-loader'
-        }
-    ],
     loaders: [
+      {
+        test: /\.jsx?$/,
+        exclude: /node_modules|bower_components/,
+        loader: 'babel-loader?optional=runtime'
+      },
       {
         test: /\.css$/,
         loader: ExtractTextPlugin.extract(
@@ -59,7 +58,15 @@ var config = {
       // Always load fonts as a separate file, in case the stylesheet defines
       // several files for the same font face.
       { test: /\.(eot|woff2?|ttf)$/, loader: 'file' }
-    ]
+    ],
+    postLoaders: [
+        // Run JSHint after transforms because it doesn't understand JSX syntax
+        {
+            test: /\.jsx?$/,
+            exclude: /node_modules/,
+            loader: 'jshint-loader'
+        }
+    ],
   },
 
   plugins: [
