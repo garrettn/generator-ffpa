@@ -23,7 +23,7 @@ describe('ffpa:app', function () {
       'bower.json',
       'package.json',
       '.editorconfig',
-      '.jshintrc',
+      '.eslintrc',
       '.gitignore',
       'webpack.config.js',
       'zip.js',

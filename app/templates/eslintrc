@@ -1,0 +1,17 @@
+{
+  "env": {
+    "browser": true,
+    "node": true,
+    "amd": true,
+    "es6": true
+  },
+  "ecmaFeatures": {
+    "jsx": true,
+    "modules": true
+  },
+  "rules": {
+    "no-bitwise": true,
+    "wrap-iife": [2, "any"],
+    "quotes": [2, "single"]
+  }
+}

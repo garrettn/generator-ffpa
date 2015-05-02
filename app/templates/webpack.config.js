@@ -35,6 +35,13 @@ var config = {
   },
 
   module: {
+    preLoaders: [
+        {
+            test: /\.jsx?$/,
+            exclude: /node_modules|bower_components/,
+            loader: 'eslint-loader'
+        }
+    ],
     loaders: [
       {
         test: /\.jsx?$/,
@@ -67,15 +74,7 @@ var config = {
         test: /manifest\.webapp|icon(128|512)\.png/,
         loader: 'file?name=[name].[ext]'
       }
-    ],
-    postLoaders: [
-        // Run JSHint after transforms because it doesn't understand JSX syntax
-        {
-            test: /\.jsx?$/,
-            exclude: /node_modules/,
-            loader: 'jshint-loader'
-        }
-    ],
+    ]
   },
 
   plugins: [

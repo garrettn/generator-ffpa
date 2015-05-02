@@ -18,6 +18,7 @@ The app scaffolded by this generator uses [Webpack](http://webpack.github.io) to
 
 - Bundle JavaScript and other assets with Webpack. That means you can write your code with CommonJS, AMD, or ES6 modules, resulting in a better-organized app than you would get by just adding script tags to HTML. You also get the benefit of Webpack's [loaders](http://webpack.github.io/docs/list-of-loaders.html) and [plugins](http://webpack.github.io/docs/list-of-plugins.html).
 - Automatically transpile ES6 and JSX syntax with [Babel](http://babeljs.io).
+- Check JS and JSX files for potential problems with [ESLint](http://eslint.org)
 - Automatically add CSS vendor prefixes with [Autoprefixer](https://github.com/postcss/autoprefixer) (supporting Firefox OS 2.0 and up).
 - Automatically process assets used by CSS, like images and fonts. PNGs and SVGs are inlined up to 10kb. Larger files as well as JPGs and font files are copied for you, so you don't need to worry about tracking them yourself.
 - Use JS and CSS source maps in development mode.
