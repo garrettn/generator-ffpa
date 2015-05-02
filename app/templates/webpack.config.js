@@ -3,8 +3,10 @@
 var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var HtmlPlugin = require('html-webpack-plugin');
+var autoprefixer = require('autoprefixer-core');
 
 var isDev = process.env.BUILD_ENV !== 'production';
+var sourceMapParam = isDev ? '?sourceMap' : '';
 
 // Plugins to be used only for production build
 var prodPlugins = isDev
@@ -43,7 +45,8 @@ var config = {
         test: /\.css$/,
         loader: ExtractTextPlugin.extract(
           'style-loader',
-          'css-loader' + (isDev ? '?sourceMap' : '')
+          'css-loader?importLoaders=1' + sourceMapParam.replace('?', '&')
+          + '!postcss-loader' + sourceMapParam
         )
       },
 
@@ -90,7 +93,12 @@ var config = {
 
   jshint: {
     failOnHint: true
-  }
+  },
+
+  postcss: [
+    // Support Firefox 32 and up, which is equivalent to Firefox OS 2.0 and up
+    autoprefixer({browsers: ['Firefox 32']})
+  ]
 };
 
 module.exports = config;
