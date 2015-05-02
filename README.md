@@ -14,6 +14,14 @@ generator-ffpa is a tool to help you get up and running quickly when building an
 
 The app scaffolded by this generator uses [Webpack](http://webpack.github.io) to bundle assets. Webpack is pretty amazing, and this app barely scratches the surface of what it is capable of, so be sure to check out [the documentation](http://webpack.github.io).
 
+## Features
+
+- Bundle JavaScript and other assets with Webpack. That means you can write your code with CommonJS, AMD, or ES6 modules, resulting in a better-organized app than you would get by just adding script tags to HTML. You also get the benefit of Webpack's [loaders](http://webpack.github.io/docs/list-of-loaders.html) and [plugins](http://webpack.github.io/docs/list-of-plugins.html).
+- Automatically transpile ES6 and JSX syntax with [Babel](http://babeljs.io).
+- Use JS and CSS source maps in development mode.
+- Watch files for changes and automatically rebuild in development mode.
+- Easily create a zip archive of your app for submission to the Firefox Marketplace.
+
 ## Installation
 
 ### Requirements
